@@ -1,0 +1,32 @@
+
+library(RPostgres)
+library(DBI)
+source("conn.r")
+
+# Define a function that prompts the user to enter selected book
+get_search_term <- function() {
+  selection <- readline("Please select a Title of a book): ")
+  
+   #Return the selection
+  return(selection)
+}
+select<-get_search_term()
+print(select)
+
+# execute an SQL SELECT statement to retrieve the book details
+result <- dbGetQuery(conn, "SELECT title, author_name, selling_price FROM book_table")
+
+# Execute the query and retrieve the search results
+  select INSERT INTO category_table (category_id, category_name)
+  VALUES (
+      category_id:integer,
+      'category_name:character varying'
+    ); <- dbGetQuery(conn, result)
+
+# print the result set
+
+print(result)
+
+# close the database connection
+#dbDisconnect(con)
+
