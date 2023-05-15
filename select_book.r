@@ -30,6 +30,8 @@ search_books <- function(search_term) {
   return(searched_books)
 }
 
+
+
 # Define a function that adds a book to the cart table
 add_to_cart <- function(book_id) {
   # Build the SQL query to insert the book into the cart table
