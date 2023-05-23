@@ -1,0 +1,50 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2113.6">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
+  </style>
+</head>
+<body>
+<p class="p1">ui &lt;- fluidPage(</p>
+<p class="p1"><span class="Apple-converted-space">  </span>titlePanel("Bookstore App"),</p>
+<p class="p1"><span class="Apple-converted-space">  </span>navbarPage(</p>
+<p class="p1"><span class="Apple-converted-space">    </span>"Bookstore",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>tabPanel("Update Book Details",</p>
+<p class="p1"><span class="Apple-converted-space">             </span>fluidRow(</p>
+<p class="p1"><span class="Apple-converted-space">               </span>column(12,</p>
+<p class="p1"><span class="Apple-converted-space">                      </span>textInput("searchInput", "Search by Title", placeholder = "Enter book title"),</p>
+<p class="p1"><span class="Apple-converted-space">                      </span>actionButton("searchBtn", "Search")</p>
+<p class="p1"><span class="Apple-converted-space">               </span>)</p>
+<p class="p1"><span class="Apple-converted-space">             </span>),</p>
+<p class="p1"><span class="Apple-converted-space">             </span>hr(),</p>
+<p class="p1"><span class="Apple-converted-space">             </span># Update book details table</p>
+<p class="p1"><span class="Apple-converted-space">             </span>DT::dataTableOutput("updateBookTable")</p>
+<p class="p1"><span class="Apple-converted-space">    </span>),</p>
+<p class="p1"><span class="Apple-converted-space">    </span>tabPanel("Add Book",</p>
+<p class="p1"><span class="Apple-converted-space">             </span>sidebarLayout(</p>
+<p class="p1"><span class="Apple-converted-space">               </span>sidebarPanel(</p>
+<p class="p1"><span class="Apple-converted-space">                 </span># Add input elements for adding a book</p>
+<p class="p1"><span class="Apple-converted-space">                 </span>textInput("isbn", "ISBN"),</p>
+<p class="p1"><span class="Apple-converted-space">                 </span>textInput("title", "Book Title"),</p>
+<p class="p1"><span class="Apple-converted-space">                 </span>textInput("author", "Author"),</p>
+<p class="p1"><span class="Apple-converted-space">                 </span>textInput("publisher", "Publisher"),</p>
+<p class="p1"><span class="Apple-converted-space">                 </span>textInput("publishingYear", "Year"),</p>
+<p class="p1"><span class="Apple-converted-space">                 </span>numericInput("price", "Price", value = 0),</p>
+<p class="p1"><span class="Apple-converted-space">                 </span>actionButton("addBtn", "Add Book")</p>
+<p class="p1"><span class="Apple-converted-space">               </span>),</p>
+<p class="p1"><span class="Apple-converted-space">               </span>mainPanel(</p>
+<p class="p1"><span class="Apple-converted-space">                 </span># Display the book list</p>
+<p class="p1"><span class="Apple-converted-space">                 </span>DT::dataTableOutput("bookTable")</p>
+<p class="p1"><span class="Apple-converted-space">               </span>)</p>
+<p class="p1"><span class="Apple-converted-space">             </span>)</p>
+<p class="p1"><span class="Apple-converted-space">    </span>)</p>
+<p class="p1"><span class="Apple-converted-space">  </span>)</p>
+<p class="p1">)</p>
+</body>
+</html>
